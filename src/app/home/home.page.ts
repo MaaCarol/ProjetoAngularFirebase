@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthenticateService } from '../services/auth.service';
-import { CrudService } from '../services/crud.service';
-import { Storage, getDownloadURL, ref, uploadBytesResumable } from '@angular/fire/storage';
-import { MessageService } from '../services/message.service';
-import { Router } from '@angular/router';
+import { CrudService } from '../services/crud.service'; // Corrija o caminho, se necessário.
 
 @Component({
   selector: 'app-home',
@@ -11,8 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  clientes: any = [];
+  clientes: any[] = [];
 
   constructor(public crudService: CrudService) {
     this.getClientes();
@@ -29,5 +24,4 @@ export class HomePage {
         console.error('Erro ao buscar clientes:', error);
       });
   }
-
 }
