@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CrudService } from '../services/crud.service'; // Corrija o caminho, se necessário.
+import { ApiService } from '../shared/api.service';
 
 @Component({
   selector: 'app-home',
@@ -7,21 +8,19 @@ import { CrudService } from '../services/crud.service'; // Corrija o caminho, se
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  clientes: any[] = [];
-
-  constructor(public crudService: CrudService) {
-    this.getClientes();
+  usuario: any={
+    name:'',
+    email:'',
+    password: '',
+    password_confirmation: '',
+    
   }
-
-  getClientes() {
-    fetch('http://127.0.0.1:8000/api/clientes')
-      .then(resp => resp.json())
-      .then(resp => {
-        console.log(resp);
-        this.clientes = resp;
-      })
-      .catch(error => {
-        console.error('Erro ao buscar clientes:', error);
-      });
-  }
+  constructor(
+    public apiService: ApiService
+  ) {}
+cadastrarUsuario(){
+  this.apiService.post('usuario/registrar-se', this.usuario).subscribe(resp=>{
+    console.log(resp)
+  })
+}
 }
