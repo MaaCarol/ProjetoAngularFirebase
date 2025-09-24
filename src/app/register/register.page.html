@@ -1,0 +1,34 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Crie sua conta</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form #registerForm="ngForm" (ngSubmit)="cadastrarUsuario()">
+        <ion-item>
+          <ion-label position="floating">Nome Completo</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.name" name="name" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input type="email" [(ngModel)]="usuario.email" name="email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirmação de Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="usuario.password_confirmation" name="password_confirmation" required></ion-input>
+        </ion-item>
+        <ion-button expand="full" type="submit" class="ion-margin-top">
+          CADASTRAR-SE
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <p class="ion-text-center">
+    Já tem uma conta?
+    <a routerLink="/login">Faça login</a>
+  </p>
+</ion-content>

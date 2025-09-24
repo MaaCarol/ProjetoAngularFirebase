@@ -1,0 +1,31 @@
+ion-card {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin: 16px;
+}
+
+ion-item {
+  --inner-padding-end: 0;
+  --padding-start: 0;
+}
+
+ion-avatar {
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+}
+
+ion-card-content {
+  padding-top: 0;
+}
+
+.like-section {
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.like-section ion-button {
+  margin: 0;
+  padding: 0 8px;
+}
