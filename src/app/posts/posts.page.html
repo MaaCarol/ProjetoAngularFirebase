@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Posts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Criar Post -->
+  <ion-card>
+    <ion-card-header><ion-card-title>Novo Post</ion-card-title></ion-card-header>
+    <ion-card-content>
+      <ion-item *ngIf="false">
+        <ion-input [(ngModel)]="newPost.user_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Descrição" [(ngModel)]="newPost.description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea placeholder="Conteúdo" [(ngModel)]="newPost.content"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="URL da Imagem" [(ngModel)]="newPost.picture"></ion-input>
+      </ion-item>
+      <ion-button expand="block" color="success" (click)="addPost()">Postar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Lista de Posts -->
+  <ion-list>
+    <ion-item *ngFor="let post of posts">
+      <ion-thumbnail slot="start" *ngIf="post.picture"><img [src]="post.picture"/></ion-thumbnail>
+      <ion-label>
+        <h2>{{ post.user_name }}</h2>
+        <p>{{ post.description }}</p>
+        <p>{{ post.content }}</p>
+        <small>{{ post.created_at | date:'short' }}</small>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,81 @@
+:host {
+  --custom-gradient: linear-gradient(135deg, #483D8B, #8A2BE2 70%, #9400D3);
+  --custom-card-background: rgba(0, 0, 0, 0.25);
+  --custom-card-border: rgba(255, 255, 255, 0.2);
+  --custom-text-color: #ffffff;
+  --custom-text-color-secondary: #e0e0e0;
+  --custom-button-color: #3880ff;
+}
+
+ion-content {
+  --background: var(--custom-gradient);
+}
+
+ion-toolbar {
+  --background: transparent;
+  --border-width: 0;
+}
+
+ion-toolbar ion-title {
+  color: var(--custom-text-color);
+  font-weight: bold;
+}
+
+.new-post-form {
+  margin: 16px;
+  background: var(--custom-card-background);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--custom-card-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.new-post-form ion-item {
+  --background: transparent;
+  --color: var(--custom-text-color);
+  --placeholder-color: var(--custom-text-color-secondary);
+}
+
+.new-post-form ion-button {
+  --background: var(--custom-button-color);
+  --background-activated: #4c8dff;
+  --color: var(--custom-text-color);
+  --border-radius: 10px;
+  --box-shadow: none;
+  font-weight: bold;
+  height: 48px;
+  margin: 8px 0 0;
+}
+
+.post-feed {
+  padding-bottom: 16px;
+}
+
+.post-card-instagram {
+  margin: 0 16px 16px 16px;
+  background: var(--custom-card-background);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--custom-card-border);
+  border-radius: 16px;
+}
+
+.post-header .post-avatar-icon,
+.post-header .post-username {
+  color: var(--custom-text-color);
+}
+
+.post-image img {
+  border-radius: 0 0 4px 4px;
+}
+
+.post-actions ion-icon {
+  color: var(--custom-text-color);
+}
+
+.post-caption {
+  color: var(--custom-text-color);
+}
+
+.post-time {
+  color: var(--custom-text-color-secondary) !important;
+}
